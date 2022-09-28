@@ -443,7 +443,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "sourcetxt":
         await query.answer("Sorry Source Code Of This Bot is Private Add This Bot in Your Group And Use Like Yours😊",show_alert=True)
-        )
     elif query.data == "source":
         buttons = [[
             InlineKeyboardButton('🚶 𝗕𝗮𝗰𝗸 🚶', callback_data='start')
