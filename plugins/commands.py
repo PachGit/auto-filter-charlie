@@ -8,14 +8,10 @@ from pyrogram.errors.exceptions.bad_request_400 import ChatAdminRequired
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id
 from database.users_chats_db import db
-from info import CHANNELS, ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, LOG_CHANNEL, PICS
+from info import CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, LOG_CHANNEL, PICS
 from utils import get_size, is_subscribed, temp
 import re
 logger = logging.getLogger(__name__)
-
-@Client.on_inline_query(filters.user(AUTH_USERS) if AUTH_USERS else None)
-async def answer(bot, query):
-    """Show search results for given inline query"""
 
 @Client.on_message(filters.command("start"))
 async def start(client, message):
@@ -44,7 +40,7 @@ async def start(client, message):
             InlineKeyboardButton('🏃‍♂ᴴᴱᴸᴾ🏃‍♂', callback_data='help'),
             InlineKeyboardButton('📕ᴬᴮᴼᵁᵀ📕', callback_data='about')
             ],[
-            InlineKeyboardButton('♻️ 𝗦𝗲𝗮𝗿𝗰𝗵 𝗛𝗲𝗿𝗲 ♻️', switch_inline_query_current_chat=query)
+            InlineKeyboardButton('♻️ 𝗦𝗲𝗮𝗿𝗰𝗵 𝗛𝗲𝗿𝗲 ♻️', switch_inline_query_current_chat='')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -84,7 +80,7 @@ async def start(client, message):
             InlineKeyboardButton('🏃‍♂ᴴᴱᴸᴾ🏃‍♂', callback_data='help'),
             InlineKeyboardButton('📕ᴬᴮᴼᵁᵀ📕', callback_data='about')
             ],[
-            InlineKeyboardButton('♻️ 𝗦𝗲𝗮𝗿𝗰𝗵 𝗛𝗲𝗿𝗲 ♻️', switch_inline_query_current_chat=query)
+            InlineKeyboardButton('♻️ 𝗦𝗲𝗮𝗿𝗰𝗵 𝗛𝗲𝗿𝗲 ♻️', switch_inline_query_current_chat='')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
