@@ -70,9 +70,7 @@ These are the extra features of 𝘾𝙝𝙖𝙧𝙡𝙞𝙚 𝘾𝙝𝙖𝙥�
 
 <b>Commands and Usage:</b>
 ➾ /id - <code>get id of a specifed user.</code>
-➾ /info  - <code>get information about a user.</code>
-➾ /imdb  - <code>get the film information from IMDb source.</code>
-➾ /search  - <code>get the film information from various sources.</code>"""
+➾ /info  - <code>get information about a user.</code>"""
     ADMIN_TXT = """Help: <b>Admin mods</b>
 
 <b>NOTE:</b>
